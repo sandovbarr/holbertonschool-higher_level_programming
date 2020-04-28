@@ -1,8 +1,10 @@
 #!/usr/bin/ýthon3
 def print_last_digit(number):
     if number < 0:
-        print(((number * -1) % 10), end="")
-        return((number * -1) % 10)
+        last = (number * -1) % 10
+        print(last, end="")
+        return(last)
     else:
-        print((number % 10), end="")
-        return (number % 10)
+        last = number % 10
+        print(last, end="")
+        return (last)
