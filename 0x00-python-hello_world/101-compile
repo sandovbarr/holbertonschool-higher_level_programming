@@ -1,0 +1,6 @@
+#!/bin/bash
+python3 -m py_compile $PYFILE
+mv ./__pycache__/main.cpython-36.pyc ./__pycache__/my_main.pyc
+mv ./__pycache__/my_main.pyc ./
+rm -rf __pycache__
+export PYFILEc=my_main.pyc
