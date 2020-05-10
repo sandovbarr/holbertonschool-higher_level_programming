@@ -1,10 +1,6 @@
 #!/usr/bin/python3
 def roman_to_int(roman_string):
-    if (roman_string is None) or (type(roman_string) != str):
-            return 0
-
-    roman = 0
-    nums = {
+    letters = {
         'I': 1,
         'V': 5,
         'X': 10,
@@ -14,12 +10,12 @@ def roman_to_int(roman_string):
         'M': 1000
     }
 
-    limit = len(roman_string)
-    for ch in range(0, limit):
-        if ch == len(roman_string) - 1:
-            roman += nums[roman_string[ch]]
-        elif nums[roman_string[ch]] >= nums[roman_string[ch + 1]]:
-            roman += nums[roman_string[ch]]
+    value = 0
+    for let in range(len(roman_string)):
+        if let == len(roman_string) - 1:
+                value += letters[roman_string[let]]
+        elif letters[roman_string[let]] >= letters[roman_string[let + 1]]:
+                value += letters[roman_string[let]]
         else:
-            roman -= nums[roman_string[ch]]
-    return roman
+                value -= letters[roman_string[let]]
+    return value
