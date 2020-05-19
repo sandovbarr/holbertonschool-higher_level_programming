@@ -38,9 +38,9 @@ class Square:
 
     def my_print(self):
         """prints the square based on square"""
-        if self.__size  == 0:
-            print ('')
+        if self.__size == 0:
+            print('')
         for n in range(self.__size):
             for m in range(self.__size):
-                print ('#', end='')
-            print ('')
+                print('#', end='')
+            print('')
