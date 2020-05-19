@@ -2,7 +2,6 @@
 """Square class"""
 
 
-
 class Square:
     """Square class with private attribute
     Type of size must be an integer
