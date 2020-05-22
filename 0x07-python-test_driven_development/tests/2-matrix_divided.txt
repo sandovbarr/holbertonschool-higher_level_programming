@@ -1,0 +1,156 @@
+===============================
+tester for 2-matrix_divided
+===============================
+
+Import module:
+****************
+        >>> tester = __import__ ("2-matrix_divided").matrix_divided
+
+No arguments:
+****************
+        >>> tester()
+        Traceback (most recent call last):
+        ...
+        TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
+
+None arguments:
+****************
+        >>> tester(None)
+        Traceback (most recent call last):
+        ...
+        TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+Double None arguments:
+****************
+        >>> tester(None, None)
+        Traceback (most recent call last):
+        ...
+        TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Division by zero:
+****************
+        >>> matrix = [
+        ... [1, 2, 3],
+        ... [4, 5, 6]
+        ... ]
+        >>> tester(matrix, 0)
+        Traceback (most recent call last):
+        ...
+        ZeroDivisionError: division by zero
+
+Division by zero.zero:
+****************
+        >>> tester(matrix, 0.0)
+        Traceback (most recent call last):
+        ...
+        ZeroDivisionError: division by zero
+
+Division by integer:
+****************
+        >>> tester(matrix, 3)
+        [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+Division by negative integer:
+****************
+        >>> tester(matrix, -3)
+        [[-0.33, -0.67, -1.0], [-1.33, -1.67, -2.0]]
+
+Division by floats:
+****************
+        >>> tester(matrix, 4.25)
+        [[0.24, 0.47, 0.71], [0.94, 1.18, 1.41]]
+
+Division by undefined variable:
+****************
+        >>> tester(matrix, a)
+        Traceback (most recent call last):
+        ...
+        NameError: name 'a' is not defined
+
+Division by char:
+****************
+        >>> tester(matrix, 'a')
+        Traceback (most recent call last):
+        ...
+        TypeError: div must be a number
+
+Division by None:
+****************
+        >>> tester(matrix, None)
+        Traceback (most recent call last):
+        ...
+        TypeError: div must be a number
+
+Just argument matrix:
+****************
+        >>> tester(matrix)
+        Traceback (most recent call last):
+        ...
+        TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+Empty matrix:
+****************
+        >>> matrix = []
+        >>> tester(matrix, 9)
+        Traceback (most recent call last):
+        ...
+        TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Diferent lengths of matrix:
+****************
+        >>> matrix = [
+        ... [1, 2, 3],
+        ... [4, 5]
+        ... ]
+        >>> tester(matrix, 5)
+        Traceback (most recent call last):
+        ...
+        TypeError: Each row of the matrix must have the same size
+
+Diferent lengths of matrix v2:
+****************
+        >>> matrix = [
+        ... [1, 2],
+        ... [4, 5, 6]
+        ... ]
+        >>> tester(matrix, 5)
+        Traceback (most recent call last):
+        ...
+        TypeError: Each row of the matrix must have the same size
+
+Matrix with tuples:
+****************
+        >>> matrix = [
+        ... (1, 2, 3),
+        ... [4, 5, 6]
+        ... ]
+        >>> tester(matrix, 5)
+        Traceback (most recent call last):
+        ...
+        TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Matrix as tuple:
+****************
+        >>> matrix = ((1, 2, 3),(4, 5, 6))
+        >>> tester(matrix, 5)
+        Traceback (most recent call last):
+        ...
+        TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Matrix - list- tuples:
+****************
+        >>> matrix = [[(1, 2, 3)],[(4, 5, 6)]]
+        >>> tester(matrix, 5)
+        Traceback (most recent call last):
+        ...
+        TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Long floats:
+****************
+        >>> matrix = [
+        ... [10.555555555555, 2, 3],
+        ... [4, 5, 6]
+        ... ]
+        >>> tester(matrix, 5)
+        [[2.11, 0.4, 0.6], [0.8, 1.0, 1.2]]
+
