@@ -24,7 +24,13 @@ Tester for 4-print_square.py
         ##########
         ##########
         ##########
-        
+
+******missing argument******
+        >>> tester()
+        Traceback (most recent call last):
+        ...
+        TypeError: print_square() missing 1 required positional argument: 'size'
+
 ******square * 0******
         >>> tester(0)
 
@@ -62,4 +68,3 @@ Tester for 4-print_square.py
         Traceback (most recent call last):
         ...
         TypeError: size must be an integer
-
