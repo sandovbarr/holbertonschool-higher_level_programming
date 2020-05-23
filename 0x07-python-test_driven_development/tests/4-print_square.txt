@@ -1,0 +1,65 @@
+============================
+Tester for 4-print_square.py
+============================
+
+*****import module*****
+        >>> tester = __import__('4-print_square').print_square
+
+*****square * 4******
+        >>> tester(4)
+        ####
+        ####
+        ####
+        ####
+
+*****square * 10*****
+        >>> tester(10)
+        ##########
+        ##########
+        ##########
+        ##########
+        ##########
+        ##########
+        ##########
+        ##########
+        ##########
+        ##########
+        
+******square * 0******
+        >>> tester(0)
+
+******square * 1******
+        >>> tester(1)
+        #
+
+******square * -1******
+        >>> tester(-1)
+        Traceback (most recent call last):
+        ...
+        ValueError: size must be >= 0
+
+******square * char****
+        >>> tester('a')
+        Traceback (most recent call last):
+        ...
+        TypeError: size must be an integer
+
+******square * None****
+        >>> tester(None)
+        Traceback (most recent call last):
+        ...
+        TypeError: size must be an integer
+
+
+******square * float 4.25****
+        >>> tester(4.25)
+        Traceback (most recent call last):
+        ...
+        TypeError: size must be an integer
+
+******square * negative float -4.25****
+        >>> tester(-4.25)
+        Traceback (most recent call last):
+        ...
+        TypeError: size must be an integer
+

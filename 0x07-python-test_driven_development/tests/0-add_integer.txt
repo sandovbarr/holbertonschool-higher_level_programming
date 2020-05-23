@@ -52,3 +52,13 @@ Add without arguments:
        Traceback (most recent call last):
        ...
        TypeError: a must be an integer
+
+Add one parameter 0:
+       >>> add_integer(0)
+       98
+
+Add true datatype:
+       >>> add_integer(True)
+       Traceback (most recent call last):
+       ...
+       TypeError: a must be an integer
