@@ -22,6 +22,9 @@ class TestMaxInteger(unittest.TestCase):
     def test_list_one_element(self):
         self.assertEqual(max_integer([2]), 2)
 
+    def test_lis_empty(self):
+        self.assertEqual(max_integer([]), None)
+
     def test_repeated(self):
         self.assertEqual(max_integer([2, 5, 100, 20, 100, 50]), 100)
 
