@@ -1,10 +1,18 @@
 #!/usr/bin/python3
 """Unittest for max_integer([..])
 """
+
+
 import unittest
 max_integer = __import__('6-max_integer').max_integer
 
+
 class TestMaxInteger(unittest.TestCase):
+    """
+    class for unnitest
+    contains all test for function
+    max_integer
+    """
     def test_0(self):
         self.assertEqual(max_integer([2, 5, 100]), 100)
 
@@ -36,14 +44,14 @@ class TestMaxInteger(unittest.TestCase):
         self.assertEqual(max_integer([(1, 2, 3), (4, 5, 6)]), (4, 5, 6))
 
     def test_tuples_type_with_string(self):
-        self.assertRaises(TypeError, max_integer, ([(1, 2, 3), (4, 5, 6), "holberton"]))
+        self.assertRaises(TypeError, max_integer, ([(1, 2, 3), "holberton"]))
 
     def test_tuples_type_with_char(self):
-        self.assertRaises(TypeError, max_integer, ([(1, 2, 3), (4, 5, 6), 'A']))
+        self.assertRaises(TypeError, max_integer, ([(1, 2, 3), 'A']))
 
     def test_list_tuples_with_letters(self):
         self.assertEqual(max_integer([(1, 2, 3, 'z'), (4, 5, 6)]), (4, 5, 6))
-        self.assertEqual(max_integer([(1, 2, 3, 'z'), (4, 5, 6, 'a')]), (4, 5, 6, 'a'))
+        self.assertEqual(max_integer([(1, 'z'), (6, 'a')]), (6, 'a'))
 
     def test_bool(self):
         self.assertEqual(max_integer([False, True]), True)
