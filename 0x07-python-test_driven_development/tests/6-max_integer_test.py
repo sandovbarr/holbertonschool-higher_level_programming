@@ -19,6 +19,9 @@ class TestMaxInteger(unittest.TestCase):
     def test_1(self):
         self.assertEqual(max_integer([2, 5, 100, 20, 50]), 100)
 
+    def test_list_one_element(self):
+        self.assertEqual(max_integer([2]), 2)
+
     def test_repeated(self):
         self.assertEqual(max_integer([2, 5, 100, 20, 100, 50]), 100)
 
