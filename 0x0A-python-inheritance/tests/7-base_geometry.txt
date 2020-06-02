@@ -1,0 +1,50 @@
+===========================
+tester for 7-base_geometry
+===========================
+
+Import module:
+***************************
+    >>> impcls = __import__('7-base_geometry').BaseGeometry
+
+assign to a variable:
+***************************
+    >>> instance_tester = impcls()
+
+without arguments:
+***************************
+    >>> instance_tester.integer_validator()
+    Traceback (most recent call last):
+    ...
+    TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+just one arguments:
+***************************
+    >>> instance_tester.integer_validator(1)
+    Traceback (most recent call last):
+    ...
+    TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+Correct arguments:
+***************************
+    >>> instance_tester.integer_validator("normalvalue", 28)
+
+Raise area not implemented:
+>***************************
+    >>> instance_tester.area()
+    Traceback (most recent call last):
+    ...
+    Exception: area() is not implemented
+
+Invalid arguments not int
+***************************
+    >>> instance_tester.integer_validator("withstring", "hello")
+    Traceback (most recent call last):
+    ...
+    TypeError: withstring must be an integer
+
+Arguments with zero
+***************************
+    >>> instance_tester.integer_validator("withzero", 0)
+    Traceback (most recent call last):
+    ...
+    ValueError: withzero must be greater than 0

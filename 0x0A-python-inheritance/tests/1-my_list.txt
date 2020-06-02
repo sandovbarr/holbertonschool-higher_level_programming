@@ -1,0 +1,54 @@
+===========================
+Tester for 1-mylist
+===========================
+
+Import module:
+****************
+    >>> tester = __import__("1-my_list").MyList
+
+
+No arguments:
+****************
+    >>> tester()
+    []
+
+Holberton examples
+*****************
+    >>> tester = tester()
+    >>> tester.append(1)
+    >>> tester.append(4)
+    >>> tester.append(2)
+    >>> tester.append(3)
+    >>> tester.append(5)
+    >>> tester.print_sorted()
+    [1, 2, 3, 4, 5]
+
+Negative numbers
+******************
+    >>> tester.append(1)
+    >>> tester.append(-4)
+    >>> tester.append(2)
+    >>> tester.append(3)
+    >>> tester.append(-5)
+    >>> tester.print_sorted()
+    [-5, -4, 1, 1, 2, 2, 3, 3, 4, 5]
+
+Add empty arguments
+*******************
+    >>> tester.append()
+    Traceback (most recent call last):
+    ...
+    TypeError: append() takes exactly one argument (0 given)
+
+Add a letter argument
+**********************
+    >>> tester.append('a')
+    >>> print(tester)
+    [1, 4, 2, 3, 5, 1, -4, 2, 3, -5, 'a']
+    
+Cant order
+**********************
+    >>> tester.print_sorted()
+    Traceback (most recent call last):
+    ...
+    TypeError: unorderable types: str() < int()
