@@ -10,6 +10,13 @@ assign to a variable:
 ***************************
     >>> instance_tester = impcls()
 
+without arguments none:
+***************************
+    >>> instance_tester.integer_validator(None)
+    Traceback (most recent call last):
+    ...
+    TypeError: integer_validator() missing 1 required positional argument: 'value'
+
 without arguments:
 ***************************
     >>> instance_tester.integer_validator()
@@ -27,6 +34,13 @@ just one arguments:
 Correct arguments:
 ***************************
     >>> instance_tester.integer_validator("normalvalue", 28)
+
+Correct arguments:
+***************************
+    >>> instance_tester.integer_validator("negative", -28)
+    Traceback (most recent call last):
+    ...
+    ValueError: negative must be greater than 0
 
 Raise area not implemented:
 >***************************
