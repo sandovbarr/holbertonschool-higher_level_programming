@@ -56,6 +56,34 @@ Invalid arguments not int
     ...
     TypeError: withstring must be an integer
 
+Invalid arguments with bool
+***************************
+    >>> instance_tester.integer_validator("bool", True)
+    Traceback (most recent call last):
+    ...
+    TypeError: bool must be an integer
+
+Invalid arguments list
+***************************
+    >>> instance_tester.integer_validator("lista", [1, 2])
+    Traceback (most recent call last):
+    ...
+    TypeError: lista must be an integer
+
+Invalid arguments list
+***************************
+    >>> instance_tester.integer_validator("tuple", (1, 2))
+    Traceback (most recent call last):
+    ...
+    TypeError: tuple must be an integer
+
+Invalid arguments float
+***************************
+    >>> instance_tester.integer_validator("float", 2.5)
+    Traceback (most recent call last):
+    ...
+    TypeError: float must be an integer
+
 Arguments with zero
 ***************************
     >>> instance_tester.integer_validator("withzero", 0)
