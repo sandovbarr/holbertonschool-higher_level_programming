@@ -1,130 +1,81 @@
-===========================
-tester for 7-base_geometry
-===========================
+# importing module: 7-base_geometry
+=========================================================
+    >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+    >>> bg = BaseGeometry()
 
-Import module:
-***************************
-    >>> impcls = __import__('7-base_geometry').BaseGeometry
+# check correct outputs
+=========================================================
+    >>> bg.integer_validator("my_int", 12)
 
-assign to a variable:
-***************************
-    >>> instance_tester = impcls()
+    >>> bg.integer_validator("width", 89)
 
-without arguments none:
-***************************
-    >>> instance_tester.integer_validator(None)
+# check for TypeError
+=========================================================
+    >>> bg.integer_validator("my_int", 'a')
+    Traceback (most recent call last):
+    ...
+    TypeError: my_int must be an integer
+
+    >>> bg.integer_validator("my_int", 'Holberton')
+    Traceback (most recent call last):
+    ...
+    TypeError: my_int must be an integer
+
+    >>> bg.integer_validator("my_int", 7.7)
+    Traceback (most recent call last):
+    ...
+    TypeError: my_int must be an integer
+
+    >>> bg.integer_validator("my_int", True)
+    Traceback (most recent call last):
+    ...
+    TypeError: my_int must be an integer
+
+    >>> bg.integer_validator("my_int", None)
+    Traceback (most recent call last):
+    ...
+    TypeError: my_int must be an integer
+
+    >>> bg.integer_validator("my_int")
     Traceback (most recent call last):
     ...
     TypeError: integer_validator() missing 1 required positional argument: 'value'
 
-without arguments:
-***************************
-    >>> instance_tester.integer_validator()
+    >>> bg.integer_validator()
     Traceback (most recent call last):
     ...
     TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
 
-just one arguments:
-***************************
-    >>> instance_tester.integer_validator(1)
+    >>> bg.integer_validator("my_int", (1,0))
     Traceback (most recent call last):
     ...
-    TypeError: integer_validator() missing 1 required positional argument: 'value'
+    TypeError: my_int must be an integer
 
-Correct arguments:
-***************************
-    >>> instance_tester.integer_validator("normalvalue", 28)
-
-Correct arguments:
-***************************
-    >>> instance_tester.integer_validator("negative", -28)
+    >>> bg.integer_validator("my_int", {1,0})
     Traceback (most recent call last):
     ...
-    ValueError: negative must be greater than 0
+    TypeError: my_int must be an integer
 
-Raise area not implemented:
->***************************
-    >>> instance_tester.area()
+    >>> bg.integer_validator("my_int", [1,0])
+    Traceback (most recent call last):
+    ...
+    TypeError: my_int must be an integer
+
+# check for ValueError
+=========================================================
+    >>> bg.integer_validator("my_int", 0)
+    Traceback (most recent call last):
+    ...
+    ValueError: my_int must be greater than 0
+
+    >>> bg.integer_validator("my_int", -7)
+    Traceback (most recent call last):
+    ...
+    ValueError: my_int must be greater than 0
+
+# Exception
+=========================================================
+    >>> bg.area()
     Traceback (most recent call last):
     ...
     Exception: area() is not implemented
-
-Invalid arguments not int
-***************************
-    >>> instance_tester.integer_validator("withstring", "hello")
-    Traceback (most recent call last):
-    ...
-    TypeError: withstring must be an integer
-
-Invalid arguments with bool
-***************************
-    >>> instance_tester.integer_validator("bool", True)
-    Traceback (most recent call last):
-    ...
-    TypeError: bool must be an integer
-
-Invalid arguments list
-***************************
-    >>> instance_tester.integer_validator("lista", [1, 2])
-    Traceback (most recent call last):
-    ...
-    TypeError: lista must be an integer
-
-Invalid arguments tuple
-***************************
-    >>> instance_tester.integer_validator("tuple", (1, 2))
-    Traceback (most recent call last):
-    ...
-    TypeError: tuple must be an integer
-
-Invalid arguments float
-***************************
-    >>> instance_tester.integer_validator("float", 2.5)
-    Traceback (most recent call last):
-    ...
-    TypeError: float must be an integer
-
-Arguments with zero
-***************************
-    >>> instance_tester.integer_validator("withzero", 0)
-    Traceback (most recent call last):
-    ...
-    ValueError: withzero must be greater than 0
-
-Arguments with tuple
-***************************
-    >>> instance_tester.integer_validator("tupleex", (0, 1))
-    Traceback (most recent call last):
-    ...
-    TypeError: tupleex must be an integer
-
-Arguments with dictio
-***************************
-    >>> instance_tester.integer_validator("dicteex", {"key": 'value'})
-    Traceback (most recent call last):
-    ...
-    TypeError: dicteex must be an integer
-
-Arguments with list
-***************************
-    >>> instance_tester.integer_validator("listex", [1,2,3,4])
-    Traceback (most recent call last):
-    ...
-    TypeError: listex must be an integer
-
-Arguments with just name:
-***************************
-    >>> instance_tester.integer_validator("justname")
-    Traceback (most recent call last):
-    ...
-    TypeError: integer_validator() missing 1 required positional argument: 'value'
-
-
-main validations 
-    >>> bg = impcls()
-    >>> try:
-    ...     bg.integer_validator("name", "John")
-    ... except Exception as e:
-    ...     print("[{}] {}".format(e.__class__.__name__, e))
-    [TypeError] name must be an integer
-
