@@ -52,3 +52,10 @@ Cant order
     Traceback (most recent call last):
     ...
     TypeError: unorderable types: str() < int()
+
+    >>> l = tester(2)
+    Traceback (most recent call last):
+    ...
+    TypeError: 'MyList' object is not callable
+    >>> issubclass(type(tester), list)
+    True
