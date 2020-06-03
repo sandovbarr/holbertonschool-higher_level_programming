@@ -70,7 +70,7 @@ Invalid arguments list
     ...
     TypeError: lista must be an integer
 
-Invalid arguments list
+Invalid arguments tuple
 ***************************
     >>> instance_tester.integer_validator("tuple", (1, 2))
     Traceback (most recent call last):
@@ -112,9 +112,19 @@ Arguments with list
     ...
     TypeError: listex must be an integer
 
-Arguments with list
+Arguments with just name:
 ***************************
     >>> instance_tester.integer_validator("justname")
     Traceback (most recent call last):
     ...
     TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+
+main validations 
+    >>> bg = impcls()
+    >>> try:
+    ...     bg.integer_validator("name", "John")
+    ... except Exception as e:
+    ...     print("[{}] {}".format(e.__class__.__name__, e))
+    [TypeError] name must be an integer
+
