@@ -24,6 +24,8 @@ Holberton examples
     [1, 4, 2, 3, 5]
     >>> tester.print_sorted()
     [1, 2, 3, 4, 5]
+    >>> print(tester)
+    [1, 4, 2, 3, 5]
 
 Negative numbers
 ******************
