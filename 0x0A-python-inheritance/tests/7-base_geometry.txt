@@ -48,3 +48,24 @@ Arguments with zero
     Traceback (most recent call last):
     ...
     ValueError: withzero must be greater than 0
+
+Arguments with tuple
+***************************
+    >>> instance_tester.integer_validator("tupleex", (0, 1))
+    Traceback (most recent call last):
+    ...
+    TypeError: tupleex must be an integer
+
+Arguments with dictio
+***************************
+    >>> instance_tester.integer_validator("dicteex", {"key": 'value'})
+    Traceback (most recent call last):
+    ...
+    TypeError: dicteex must be an integer
+
+Arguments with list
+***************************
+    >>> instance_tester.integer_validator("listex", [1,2,3,4])
+    Traceback (most recent call last):
+    ...
+    TypeError: listex must be an integer
