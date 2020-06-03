@@ -19,4 +19,6 @@ class Square(Rectangle):
     advantage of their methods like area and __str__
     '''
     def __init__(self, size):
+        if self.integer_validator("size", size):
+            self.size = size
         super().__init__(size, size)
