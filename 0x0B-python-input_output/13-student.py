@@ -1,9 +1,9 @@
-#!/usr/bin/python
-''' '''
+#!/usr/bin/python3
+'''module 13-student'''
 
 
 class Student:
-    ''' '''
+    '''add reload_from_json'''
 
     ''' constructor '''
     def __init__(self, first_name, last_name, age):
