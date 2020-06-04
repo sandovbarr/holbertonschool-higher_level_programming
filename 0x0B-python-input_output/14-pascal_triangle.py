@@ -13,7 +13,7 @@ def pascal_triangle(n):
     pslist = [[1], [1, 1]]
 
     # bucle que se generara tantas veces como lineas vayamos a tener
-    for i in range(1, n):
+    for i in range(1, n - 1):
         # inicializamos la psline
         psline = [1]
         # bucle por cada uno de los valores de la anterior psline
