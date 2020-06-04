@@ -37,4 +37,4 @@
 ## Author: 
 ### Fernando Sandoval <julianramirezch1@gmail.com>
 ----
-[![Twitter Follow](https://img.shields.io/twitter/follow/JulianR_30.svg?style=social&label=Follow)](https://twitter.com/elhumanimal)
+[![Twitter Follow](https://img.shields.io/twitter/follow/elhumanimal.svg?style=social&label=Follow)](https://twitter.com/elhumanimal)
