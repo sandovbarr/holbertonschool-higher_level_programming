@@ -11,7 +11,7 @@ def read_lines(filename="", nb_lines=0):
     cnt_lines = 0
     with open(filename, encoding='utf-8') as text_file:
         if nb_lines <= 0:
-            print(text_file.read())
+            print(text_file.read(), end="")
             return
         for line in text_file:
             if cnt_lines < nb_lines:
