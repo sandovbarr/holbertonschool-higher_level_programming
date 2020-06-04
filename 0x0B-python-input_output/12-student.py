@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-''' '''
+'''module 12-student'''
 
 
 class Student:
-    ''' '''
+    '''init and to_json'''
 
     ''' constructor '''
     def __init__(self, first_name, last_name, age):
