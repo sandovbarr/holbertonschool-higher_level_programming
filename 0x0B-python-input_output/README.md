@@ -35,6 +35,6 @@
 #### Note : Now, you have a simple implementation of a serialization and deserialization mechanism (concept of representation of an object to another format, without losing any information and allow us to rebuild an object based on this representation)
 
 ## Author: 
-### Fernando Sandoval <julianramirezch1@gmail.com>
+### Fernando Sandoval <sandovbarr@gmail.com>
 ----
 [![Twitter Follow](https://img.shields.io/twitter/follow/elhumanimal.svg?style=social&label=Follow)](https://twitter.com/elhumanimal)
