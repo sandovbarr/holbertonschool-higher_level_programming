@@ -6,8 +6,9 @@ import math
 def pascal_triangle(n):
     ''' defines the pascal traingle'''
 
+    empty = []
     if n <= 0:
-        return ([])
+        return (empty)
     # creamos una lista que contendra los dos primeras lineas
     pslist = [[1],[1,1]]
 
