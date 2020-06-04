@@ -1,9 +1,9 @@
 #!/usr/bin/python
-''' '''
+'''Module 11-student'''
 
 
 class Student:
-    ''' '''
+    '''init class and return dir'''
 
     ''' constructor '''
     def __init__(self, first_name, last_name, age):
