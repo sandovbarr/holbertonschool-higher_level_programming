@@ -61,19 +61,19 @@ class Base:
         if cls.__name__ == 'Rectangle':
             dummyinst = cls(1,1)
         if cls.__name__ == 'Square':
-            dummyinst = cls(1,1)
+            dummyinst = cls(1)
         dummyinst.update(**dictionary)
         return dummyinst
 
     @classmethod
     def load_from_file(cls):
         try:
-            with open(cls.__name__ + '.json', 'r') as f:
+            with open(cls.__name__ + '.json', 'r', encoding='utf-8') as file:
                 '''retornar la lista de instancias'''
-                fileopen = f.open()
-                
+                listofinstances = []
+                data = cls.from_json_string(file.read())
+                for element in data:
+                    listofinstances.append(cls.create(**element))
+                return(listofinstances)
         except:
             return ([])
-
-
-
