@@ -26,7 +26,7 @@ class Base:
         if list_dictionaries is not None or []:
             return json.dumps(list_dictionaries)
         else:
-            return ([])
+            return "[]"
 
     @classmethod
     def save_to_file(cls, list_objs):
@@ -52,14 +52,15 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
-        if json_string is None or "":
-            return ([])
+        """returns the dictionary representation of a Square"""
+        if json_string is None or len(json_string) == 0:
+            return []
         return json.loads(json_string)
 
     @classmethod
     def create(cls, **dictionary):
         if cls.__name__ == 'Rectangle':
-            dummyinst = cls(1,1)
+            dummyinst = cls(1, 1)
         if cls.__name__ == 'Square':
             dummyinst = cls(1)
         dummyinst.update(**dictionary)

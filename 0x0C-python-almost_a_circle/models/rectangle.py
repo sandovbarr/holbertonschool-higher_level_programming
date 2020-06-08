@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 ''' '''
 
-Base = __import__('base').Base
+from models.base import Base
 
 
 class Rectangle(Base):
@@ -49,7 +49,7 @@ class Rectangle(Base):
             raise ValueError('width must be > 0')
         self.__width = value
 
-    @width.setter
+    @height.setter
     def height(self, value):
         if type(value) != int:
             raise TypeError('height must be an integer')
@@ -100,13 +100,21 @@ class Rectangle(Base):
             self.y = args[4] if len(args) == 5 else self.__y
             return
         else:
-            super().__init__(kwargs['id']) if kwargs.get('id') else self.id
-            self.width = kwargs['width'] if kwargs.get('width') else self.__width
-            self.height = kwargs['height'] if kwargs.get('height') else self.__height
+            super().__init__(kwargs['id'])\
+                if kwargs.get('id') else self.id
+            self.width = kwargs['width']\
+                if kwargs.get('width') else self.__width
+            self.height = kwargs['height']\
+                if kwargs.get('height') else self.__height
             self.x = kwargs['x'] if kwargs.get('x') else self.__x
             self.y = kwargs['y'] if kwargs.get('y') else self.__y
 
     def to_dictionary(self):
-        r_rpr = {'x': self.x, 'y': self.y, 'id': self.id, 'height': self.__height, 'width': self.__width}
+        r_rpr = {
+            'x': self.x,
+            'y': self.y,
+            'id': self.id,
+            'height': self.__height,
+            'width': self.__width
+            }
         return (r_rpr)
-
