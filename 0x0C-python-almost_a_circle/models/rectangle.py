@@ -1,5 +1,8 @@
 #!/usr/bin/python3
-''' '''
+'''
+    Rectangle class module
+    import form base module
+'''
 
 from models.base import Base
 
