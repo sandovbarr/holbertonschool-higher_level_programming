@@ -44,9 +44,9 @@ class Base:
         '''
         filename = cls.__name__ + ".json"
         elements = []
-        for el in list_objs:
-            elements.append(el.to_dictionary())
-
+        if len(list_objs)
+            for el in list_objs:
+                elements.append(el.to_dictionary())
         with open(filename, 'w') as f:
             jsonstrings = cls.to_json_string(elements)
             f.write(jsonstrings)
