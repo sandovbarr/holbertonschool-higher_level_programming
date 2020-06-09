@@ -41,15 +41,15 @@ class Square(Rectangle):
     def update(self, *args, **kwargs):
         ''' update by args o kwargs '''
         if len(args):
-            self.id = args[0]
-            self.size = args[1] if len(args) == 2 else self.size
-            self.x = args[2] if len(args) == 3 else self.x
-            self.y = args[3] if len(args) == 4 else self.y
+            counter = 0
+            keys = ['id', 'size', 'x', 'y']
+            for value in args:
+                if counter < 4:
+                    setattr(self, keys[counter], value)
+                    counter += 1
         else:
-            self.id = kwargs['id'] if kwargs.get('id') else self.id
-            self.size = kwargs['size'] if kwargs.get('size') else self.size
-            self.x = kwargs['x'] if kwargs.get('x') else self.x
-            self.y = kwargs['y'] if kwargs.get('y') else self.y
+            for key, value in kwargs.items():
+                setattr(self, key, value)
 
     def to_dictionary(self):
         ''' return a dict representation '''
