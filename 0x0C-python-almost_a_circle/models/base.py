@@ -47,7 +47,7 @@ class Base:
         if len(list_objs):
             for el in list_objs:
                 elements.append(el.to_dictionary())
-        with open(filename, 'w') as f:
+        with open(filename, 'w', encoding='utf-8') as f:
             jsonstrings = cls.to_json_string(elements)
             f.write(jsonstrings)
 
