@@ -42,11 +42,12 @@ class Base:
         of elements and convert it to a json string usign this method
         finally write into file f this content.
         '''
+        filename = cls.__name__ + '.json'
         elements = []
         if list_objs is not none:
             for el in list_objs:
                 elements.append(el.to_dictionary())
-        with open(cls.__name__ + '.json', 'w', encoding='utf-8') as f:
+        with open(filename, 'w', encoding='utf-8') as f:
             jsonstrings = cls.to_json_string(elements)
             f.write(jsonstrings)
 
