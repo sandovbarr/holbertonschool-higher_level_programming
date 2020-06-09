@@ -50,6 +50,7 @@ class Base:
             jsonstrings = cls.to_json_string(elements)
             f.write(jsonstrings)
 
+
     @staticmethod
     def from_json_string(json_string):
         """returns the dictionary representation of a Square"""
