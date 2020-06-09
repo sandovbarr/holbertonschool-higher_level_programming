@@ -44,7 +44,7 @@ class Base:
         '''
         filename = cls.__name__ + ".json"
         elements = []
-        if len(list_objs)
+        if len(list_objs):
             for el in list_objs:
                 elements.append(el.to_dictionary())
         with open(filename, 'w') as f:
