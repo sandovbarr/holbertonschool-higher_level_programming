@@ -13,8 +13,8 @@ class Base:
 
     __nb_objects = 0
 
-    ''' constructor '''
     def __init__(self, id=None):
+        ''' constructor '''
         if id is not None:
             self.id = id
         else:
@@ -23,6 +23,7 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
+        ''' Returns a json string '''
         if list_dictionaries is not None or []:
             return json.dumps(list_dictionaries)
         else:
@@ -59,6 +60,7 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
+        ''' creates a list of dicts '''
         if cls.__name__ == 'Rectangle':
             dummyinst = cls(1, 1)
         if cls.__name__ == 'Square':
@@ -68,6 +70,7 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
+        ''' loads from file and creates the list '''
         try:
             with open(cls.__name__ + '.json', 'r', encoding='utf-8') as file:
                 '''retornar la lista de instancias'''
