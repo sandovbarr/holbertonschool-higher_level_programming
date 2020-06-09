@@ -43,7 +43,7 @@ class Base:
         finally write into file f this content.
         '''
         elements = []
-        if len(list_objs):
+        if list_objs is not none:
             for el in list_objs:
                 elements.append(el.to_dictionary())
         with open(cls.__name__ + '.json', 'w', encoding='utf-8') as f:
