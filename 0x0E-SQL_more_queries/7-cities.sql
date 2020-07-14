@@ -6,11 +6,11 @@
 -- name VARCHAR(256) can’t be null
 -- If the database hbtn_0d_usa already exists, your script should not fail
 -- If the table cities already exists, your script should not fail
-
 CREATE DATABASE IF NOT EXISTS hbtn_0d_usa;
 USE hbtn_0d_usa;
 CREATE TABLE IF NOT EXISTS cities (
     id INT NOT NULL AUTO_INCREMENT UNIQUE, 
-    state_id INT NOT NULL FOREIGN KEY REFERENCES states(id),
-    name VARCHAR(256) NOT NULL
+    state_id INT NOT NULL,
+    name VARCHAR(256) NOT NULL,
+    FOREIGN KEY(state_id) REFERENCES hbtn_0d_usa.states(id)
     );
