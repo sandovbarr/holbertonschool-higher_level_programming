@@ -12,11 +12,10 @@ if __name__ == "__main__":
     data = sys.argv[3]
     db = MySQLdb.connect(user=sql_usr, passwd=sql_pass, db=data)
     cursor = db.cursor()
-    query = 'SELECT * FROM states ORDER BY states.id;'
+    query = 'SELECT * FROM states WHERE name LIKE "N%" ORDER BY states.id'
     cursor.execute(query)
     query_rows = cursor.fetchall()
     for row in query_rows:
         print(row)
     cursor.close()
     db.close()
-
