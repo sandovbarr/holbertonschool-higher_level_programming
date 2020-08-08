@@ -7,12 +7,10 @@ import sys
 
 
 if __name__ == "__main__":
-    mysql_username = sys.argv[1]
-    mysql_password = sys.argv[2]
-    database_name = sys.argv[3]
-    db = MySQLdb.connect(user=mysql_username,
-                        passwd=mysql_password,
-                        db=database_name)
+    sql_usr = sys.argv[1]
+    sql_pass = sys.argv[2]
+    data = sys.argv[3]
+    db = MySQLdb.connect(user=sql_usr, passwd=sql_pass, db=data)
     cursor = db.cursor()
     query = 'SELECT * FROM states ORDER BY states.id;'
     cursor.execute(query)
