@@ -25,5 +25,5 @@ if __name__ == "__main__":
         print("%s" % city, end="")
         first += 1
     print("")
-    cr.close()
+    cursor.close()
     db.close()
