@@ -2,7 +2,6 @@
 ''' script that lists all states from the database hbtn_0e_0_usa '''
 
 
-import MySQLdb
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 
