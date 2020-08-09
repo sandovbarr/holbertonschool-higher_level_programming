@@ -17,9 +17,7 @@ if __name__ == "__main__":
                            .format(user, passwd, db_name))
     init_session = sessionmaker(bind=engine)
     conection = init_session()
-    query = conection.query(State).order_by(State.id)
-    for state in query:
-        if 'a' in state.name:
-            conection.delete(state)
-            conection.commit()
+    query = conection.query(State).filter_by(State.name.contains('a')).all()
+    conection.delete(query)
+    conection.commit()
     conection.close()
