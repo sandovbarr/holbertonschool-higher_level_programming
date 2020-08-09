@@ -19,6 +19,6 @@ if __name__ == "__main__":
     conection = init_session()
     new_state = State(name='Louisiana')
     conection.add(new_state)
-    query = conection.query(State).filter_by(name='Louisiana').first()
-    print(query.id)
+    conection.commit()
+    print(new_state.id)
     conection.close()
