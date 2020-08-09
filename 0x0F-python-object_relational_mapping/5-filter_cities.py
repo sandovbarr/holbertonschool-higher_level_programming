@@ -18,10 +18,12 @@ if __name__ == "__main__":
             WHERE states.name = %s\
             ORDER BY cities.id", (state, ))
     query_rows = cursor.fetchall()
-    for row in range(len(query_rows)):
-        if row == len(query_rows) - 1:
-            print(query_rows[row][0])
-        else:
-            print(query_rows[row][0], end=", ")
-    cursor.close()
+    first = 0
+    for city in query_rows:
+        if first != 0:
+            print(", ", end="")
+        print("%s" % city, end="")
+        first += 1
+    print("")
+    cr.close()
     db.close()
