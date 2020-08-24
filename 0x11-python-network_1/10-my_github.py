@@ -1,35 +1,35 @@
 #!/usr/bin/python3
 '''
-    Write a Python script that takes your Github
-    credentials (username and password) and uses
-    the Github API to display your id
+    Python script that takes your Github credentials
+    (username and password) and uses the Github API to display your id
 
-    The letter must be sent in the variable q
-    If no argument is given, set q=""
-    If the response body is properly JSON formatted and not empty,
-    display the id and name like this: [<id>] <name>
+    You must use Basic Authentication with a personal access token as
+    password to access to your information
+    (only read:user permission is needed)
 
-    Otherwise:
-    Display Not a valid JSON if the JSON is invalid
-    Display No result if the JSON is empty
+    The first argument will be your username
+    The second argument will be your password
+    (in your case, a personal access token as password)
+
     You must use the package requests and sys
-    You are not allowed to import packages other
-    than requests and sys
+    You are not allowed to import packages other than requests and sys
+    You don’t need to check arguments passed to the script (number or type)
 '''
 import requests
 import sys
 
 
 if __name__ == "__main__":
-    url = 'http://0.0.0.0:5000/search_user'
-    letter = sys.argv[1] if len(sys.argv) > 1 else ''
-    req = requests.post(url, {'q': letter})
+    username = sys.argv[1]
+    token = sys.argv[2]
+    url = 'https://api.github.com/user'
 
     try:
+        req = requests.get(url, auth=(username,token))
         json = req.json()
-        if not json:
-            print('No result')
+        if 'id' in json.keys():
+            print('{}'.format(json['id']))
         else:
-            print('[{}] {}'.format(json['id'], json['name']))
+            print('None')
     except ValueError:
         print('Not a valid JSON')
