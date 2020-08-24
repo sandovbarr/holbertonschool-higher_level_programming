@@ -25,7 +25,7 @@ if __name__ == "__main__":
     url = 'https://api.github.com/user'
 
     try:
-        req = requests.get(url, auth=(username,token))
+        req = requests.get(url, auth=(username, token))
         json = req.json()
         if 'id' in json.keys():
             print('{}'.format(json['id']))
