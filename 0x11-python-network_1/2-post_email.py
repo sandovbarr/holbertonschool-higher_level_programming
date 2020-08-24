@@ -14,9 +14,9 @@ if __name__ == "__main__":
     url = argv[1]
     email = argv[2]
     values = {'email': email}
-    data = parse.urlencode(values)'''needs to be encoded in a standard way'''
-    data = data.encode('ascii') '''data should be bytes'''
-    req = request.Request(url, data) '''make the POST request of data'''
+    data = parse.urlencode(values)
+    data = data.encode('ascii')
+    req = request.Request(url, data)
 
     with request.urlopen(req) as response:
         html = response.read()
