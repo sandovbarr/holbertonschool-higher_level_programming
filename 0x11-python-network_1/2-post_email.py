@@ -11,11 +11,11 @@ from sys import argv
 
 if __name__ == "__main__":
     url = argv[1]
-    email = argv[2]
-    values = {'email': email}
+    e_mail = argv[2]
+    values = {'email': e_mail}
     data = parse.urlencode(values)'''needs to be encoded in a standard way'''
-    data = data.encode('ascii') '''data should be bytes'''
-    req = request.Request(url, data) '''make the POST request of data'''
+    email = data.encode('ascii') '''data should be bytes'''
+    req = request.Request(url, email) '''make the POST request of data'''
 
     with request.urlopen(req) as response:
         html = response.read()
