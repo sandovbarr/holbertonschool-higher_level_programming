@@ -10,6 +10,9 @@ import sys
 
 
 if __name__ == "__main__":
-    html = requests.get(sys.argv[1])
-    headers = html.headers
-    print(headers['X-Request-Id'])
+    try:
+        html = requests.get(sys.argv[1])
+        headers = html.headers
+        print(headers['X-Request-Id'])
+    except Exception:
+        pass
