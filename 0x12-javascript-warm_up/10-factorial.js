@@ -13,5 +13,5 @@ function factorial (num) {
 if (parseInt(process.argv[2])) {
   console.log(factorial(parseInt(process.argv[2])));
 } else {
-  console.log(NaN);
+  console.log(1);
 }
