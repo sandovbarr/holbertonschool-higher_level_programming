@@ -7,12 +7,14 @@ class Square extends square {
   }
 
   charPrint (c) {
-    if (c !== undefined) {
-      for (let iter = 0; iter < this.height; iter++) {
-        console.log(c.repeat(this.width));
-      }
-    } else {
+    if (c === undefined) {
       this.print();
+    } else {
+        for (let iter = 0; iter < this.height; iter++) {
+          console.log(c.repeat(this.width));
+        }
     }
   }
 }
+
+module.exports = Square;
