@@ -8,6 +8,10 @@ request(reqUrl, (response, error, body) => {
   const allMovies = info.results;
   let numberMovies = 0;
 
+  if (error) {
+    console.log(error);
+  }
+
   for (let iter = 0; iter < allMovies.length; iter++) {
     if (allMovies[iter].characters.includes(character)) {
       numberMovies++;
