@@ -1,20 +1,18 @@
 #!/usr/bin/node
 const request = require('request');
-const reqUrl = process.argv[2] + '/?format=json';
-const character = 'https://swapi-api.hbtn.io/api/people/18/';
-
-request(reqUrl, function (error, response, body) {
-  if (error) {
-    console.log(error);
+const URL = process.argv[2];
+request(URL, (err, res, body) => {
+  if (err) {
+    return console.log(err);
   }
-  const info = JSON.parse(body);
-  const allMovies = info.results;
-  let numberMovies = 0;
-
-  for (let iter = 0; iter < allMovies.length; iter++) {
-    if (allMovies[iter].characters.includes(character)) {
-      numberMovies++;
+  const file = JSON.parse(body).results;
+  let cnt = 0;
+  for (const items in file) {
+    for (const str in file[items].characters) {
+      if (file[items].characters[str].includes('18')) {
+        cnt += 1;
+      }
     }
   }
-  console.log(numberMovies);
+  console.log(cnt);
 });
