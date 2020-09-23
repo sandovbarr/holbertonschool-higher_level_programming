@@ -27,5 +27,5 @@ request(URL, (err, res, body) => {
     objReturn[listIds[id]] = tasksCompleted.length;
     tasksCompleted = [];
   }
-  console.log(objReturn);
+  return console.log(objReturn);
 });
